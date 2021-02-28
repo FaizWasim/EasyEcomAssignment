@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>New PaymentSheet</title>
+</head>
+<body>
+
+	<h1>Payment Sheet</h1>
+	<hr>
+	<h2>Enter the Data</h2>
+
+	<form th:action="@{/savePaymentSheet}" th:object="${paymentSheet}"
+		method="post">
+		<table>
+			<tr>
+				<td><label for="newPaymentSheet">OrderNumber</label></td>
+				<td><input type="text" class="form-control"
+					th:field="*{orderNumber}" placeholder="Enter OrderNumber"></td>
+
+			</tr>
+
+			<tr>
+				<td><label for="newPaymentSheet">SaleAmount</label></td>
+				<td><input type="number" class="form-control"
+					th:field="*{saleAmount}" placeholder="Enter SaleAmount"></td>
+
+			</tr>
+
+			<tr>
+				<td><label for="newPaymentSheet">CostPrice</label></td>
+				<td><input type="number" class="form-control"
+					th:field="*{costPrice}" placeholder="Enter CostPrice"></td>
+
+			</tr>
+
+			<tr>
+				<td><label for="newPaymentSheet">TransferredAmount</label></td>
+				<td><input type="number" class="form-control"
+					th:field="*{transferredAmount}"
+					placeholder="Enter TransferredAmount"></td>
+
+			</tr>
+
+			<tr>
+				<td><label for="newPaymentSheet">Comission</label></td>
+				<td><input type="number" class="form-control"
+					th:field="*{comission}" placeholder="Enter Comission"></td>
+
+			</tr>
+
+			<tr>
+				<td><label for="newPaymentSheet">PaymentGateaway</label></td>
+				<td><input type="number" class="form-control"
+					th:field="*{paymentGateway}" placeholder="Enter PaymentGateaway"></td>
+
+			</tr>
+
+			<tr>
+				<td><label for="newPaymentSheet">OrderNumber</label></td>
+				<td><input type="number" class="form-control"
+					th:field="*{pickPackFee}" placeholder="Enter PickPackFee"></td>
+
+			</tr>
+
+			<tr>
+				<td>
+					<a style="background-color: red;color: white;border:2px solid black ;padding: 5px;text-decoration: none;" th:href="@{/}">Cancel</a>
+				</td>
+				<td><button data-callback='onSubmit' type="submit"
+						style="background-color: #0087B0 ;color: white">Submit</button></td>
+
+
+			</tr>
+		</table>
+
+
+
+
+
+
+
+	</form>
+</body>
+</html>

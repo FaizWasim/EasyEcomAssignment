@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="ISO-8859-1">
+<title>HomePage</title>
+<style>
+table, tr, th, thead, tbody {
+	border: solid;
+	padding: 5px
+}
+</style>
+
+</head>
+<body>
+
+
+	<div align="center" class="container">
+		<h1>PaymentSheets</h1>
+		<hr>
+
+
+		<table border="10"
+			style="border-collapse: collapse; table-layout: auto;">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>OrderNumber</th>
+					<th>Profit/Loss</th>
+					<th>TransferredAmount</th>
+					<th>TotalMarketPlaceCharges</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="paymentSheet : ${listPaymentSheets}">
+					<td th:text="${paymentSheet.id}"></td>
+					<td th:text="${paymentSheet.orderNumber}"></td>
+					<td th:text="${paymentSheet.profitLoss}"></td>
+					<td th:text="${paymentSheet.transferredAmount}"></td>
+					<td th:text="${paymentSheet.totalMarketPlaceCharges}"></td>
+					<td><a
+						th:href="@{/showFormForUpdate/{id}(id=${paymentSheet.id})}"
+						style="background-color: #059DAD ;color: white;border:2px solid black ;text-decoration: none;">Update</a>
+						<a th:href="@{/deletePaymentSheet/{id}(id=${paymentSheet.id})}"
+						style="background-color: red;color: white;border:2px solid black ;text-decoration: none;">Delete</a>
+
+
+					</td>
+				</tr>
+			</tbody>
+
+
+		</table>
+
+
+	</div>
+
+
+
+
+
+	</div>
+	<div style="margin-left: 29%; margin-top: 1%">
+		<a href="#" th:href="@{/newPaymentSheet}">
+			<button type="button"
+				style="background-color: green; color: white; padding: 5px">New
+				PaymentSheet</button>
+		</a>
+
+	</div>
+
+
+
+</body>
+</html>
